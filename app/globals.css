@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+.panel {
+  @apply rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl;
+}
+
+.heart-twinkle {
+  animation-name: heartTwinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes heartTwinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateY(0) scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.15);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+.shake {
+  animation: shake 0.45s ease-in-out;
+}

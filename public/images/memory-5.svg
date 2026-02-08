@@ -1,0 +1,11 @@
+<svg width="720" height="900" viewBox="0 0 720 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d6e6ff"/>
+      <stop offset="100%" stop-color="#ffd8e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="900" fill="url(#g5)"/>
+  <path d="M20 260 C150 180 250 310 380 260 C520 210 590 340 700 280 L700 780 L20 780 Z" fill="#ffffff" opacity="0.35"/>
+  <text x="360" y="460" text-anchor="middle" font-size="58" fill="#42517a" font-family="Georgia">Memory 5</text>
+</svg>
