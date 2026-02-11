@@ -80,7 +80,10 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AudioContext.Provider value={value}>
-      <audio ref={audioRef} src="/music/romantic.mp3" loop preload="auto" />
+      <audio ref={audioRef} loop preload="auto">
+        <source src="/assets/music/valentine.mp4" type="audio/mp4" />
+        <source src="/music/romantic.mp3" type="audio/mpeg" />
+      </audio>
       {children}
     </AudioContext.Provider>
   );

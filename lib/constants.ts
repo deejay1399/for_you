@@ -1,4 +1,4 @@
-export const PASSCODE = "rosebloom14";
+export const PASSCODE = "100817";
 
 export const STORAGE_KEYS = {
   passcodeVerified: "valentine_passcode_verified",

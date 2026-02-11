@@ -20,6 +20,27 @@ body {
   @apply rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl;
 }
 
+.bloom-scene {
+  background:
+    radial-gradient(90% 80% at 20% 15%, rgba(40, 95, 155, 0.22) 0%, rgba(7, 9, 22, 0) 56%),
+    radial-gradient(95% 85% at 78% 16%, rgba(192, 32, 72, 0.2) 0%, rgba(8, 3, 16, 0) 58%),
+    radial-gradient(circle at 50% 28%, #150713 0%, #070710 48%, #020203 100%);
+}
+
+.bloom-vignette {
+  background:
+    radial-gradient(120% 80% at 50% 45%, rgba(255, 255, 255, 0) 46%, rgba(0, 0, 0, 0.34) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.56) 100%);
+}
+
+.bloom-panel {
+  border-color: rgba(164, 190, 255, 0.22);
+  background: linear-gradient(170deg, rgba(13, 19, 36, 0.62) 0%, rgba(23, 8, 23, 0.56) 100%);
+  box-shadow:
+    0 18px 50px rgba(4, 6, 16, 0.58),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
 .heart-twinkle {
   animation-name: heartTwinkle;
   animation-iteration-count: infinite;

@@ -21,39 +21,185 @@ type Memory = {
 const baseMemories: Omit<Memory, "top" | "left" | "rotate">[] = [
   {
     id: 1,
-    image: "/images/memory-1.svg",
-    title: "First Smile",
-    story: "That first smile stole my focus and rewrote the whole day."
+    image: "/images/105612115_1788423961299996_3227210796571427872_n.jpg",
+    title: "First Baby",
+    story: "The day we became three, my heart grew twice as big. Our greatest adventure began in that moment."
   },
   {
     id: 2,
-    image: "/images/memory-2.svg",
-    title: "Coffee Date",
-    story: "We stayed too long, laughed too much, and forgot the time."
+    image: "/images/126139940_1934193656723025_5112187826712982412_n.jpg",
+    title: "Sea of Clouds",
+    story: "Above the clouds and the world below, I found eternity in your eyes on that sacred day."
   },
   {
     id: 3,
-    image: "/images/memory-3.svg",
-    title: "Rain Walk",
-    story: "Even the rain felt soft when your hand was in mine."
+    image: "/images/134980761_1969808093161581_4643444260976740354_n.jpg",
+    title: "Beach Days",
+    story: "Sand in our hair, sunshine on our skin, and you by my side—perfection in its purest form."
   },
   {
     id: 4,
-    image: "/images/memory-4.svg",
-    title: "Late-Night Talks",
-    story: "I still replay those quiet midnight conversations."
+    image: "/images/43450106_1269999056475825_533257431459823616_n.jpg",
+    title: "Beach Getaway",
+    story: "Beach nights with our loves and laughter echoing into the distance. These are the memories that matter most."
   },
   {
     id: 5,
-    image: "/images/memory-5.svg",
-    title: "Road Trip",
-    story: "Wrong turns, loud songs, and the best company I could ask for."
+    image: "/images/482204157_3206142169528161_2944184804137207702_n.jpg",
+    title: "Your Smile",
+    story: "That smile that could light up the darkest day and make everything worth it. Always my favorite view."
   },
   {
     id: 6,
-    image: "/images/memory-6.svg",
-    title: "Us",
-    story: "Every memory points me back to one answer: always you."
+    image: "/images/484308037_3214464578695920_1885033113538651110_n.jpg",
+    title: "By the Water",
+    story: "Still as the water, peaceful as the moment, holding you close and knowing I'm exactly where I belong."
+  },
+  {
+    id: 7,
+    image: "/images/490348203_3254565848019126_2681514104175395006_n.jpg",
+    title: "Graduation Day",
+    story: "Proud, excited, and so ready for the future—because you're walking into it with me by your side."
+  },
+  {
+    id: 8,
+    image: "/images/503307631_3305855419556835_1063977480077365800_n.jpg",
+    title: "Travel Goals",
+    story: "Every adventure is better with you. This is just the beginning of all the places we'll explore together."
+  },
+  {
+    id: 9,
+    image: "/images/506530092_3325171520958558_1782192333350087852_n.jpg",
+    title: "First Date w/out Label",
+    story: "The date that changed everything—where we stopped pretending and started believing in forever."
+  },
+  {
+    id: 10,
+    image: "/images/509432719_3330966820379028_6683136378372929935_n.jpg",
+    title: "First Valentine Gift",
+    story: "The first gift that told you I see you, I love you, and I want to make every moment count with you."
+  },
+  {
+    id: 11,
+    image: "/images/557636320_3455265961282446_5466332129867670447_n.jpg",
+    title: "Our Growing Love",
+    story: "Building a family, building dreams, building forever with you."
+  },
+  {
+    id: 12,
+    image: "/images/592376145_3515945731881135_6742562798550904870_n.jpg",
+    title: "Little Moments",
+    story: "In those tiny face moments, I see all the reasons I fell in love with you."
+  },
+  {
+    id: 13,
+    image: "/images/0f6be61d-ca3e-42a0-a30a-73cf4ae4a7fd.jpg",
+    title: "Water Adventures",
+    story: "Your happy smile in the sun is everything I needed to see. These are the moments I'll hold forever."
+  },
+  {
+    id: 14,
+    image: "/images/16583396-515b-4da7-8dcb-336cf81bb3ae.jpg",
+    title: "Coffee & You",
+    story: "Casual moments with you are my favorite kind of luxury—no fancy place needed when I'm with you."
+  },
+  {
+    id: 15,
+    image: "/images/204a2a86-be0a-428c-acaa-11231559bc5a.jpg",
+    title: "Playing Around",
+    story: "Laughing together, being silly—these are the memories that make life beautiful."
+  },
+  {
+    id: 16,
+    image: "/images/413f5d9a-92e4-4ba7-872c-fe501099ca47.jpg",
+    title: "Achievement Unlocked",
+    story: "So proud to stand beside you and celebrate every win, no matter how big or small."
+  },
+  {
+    id: 17,
+    image: "/images/559d7579-7f2f-4a63-9407-f71442b3200c.jpg",
+    title: "Movie Nights",
+    story: "Just you, me, and the comfort of being together. The movie doesn't matter when you're here."
+  },
+  {
+    id: 18,
+    image: "/images/5789bcac-9473-44e6-afed-93418a568298.jpg",
+    title: "Getaway Vibes",
+    story: "Even in shadows, you light up my world. Your presence is all I need."
+  },
+  {
+    id: 19,
+    image: "/images/627505953_1914727702769390_1662733156553247178_n.jpg",
+    title: "Island Hopping",
+    story: "Creating memories with our whole family, seeing our love reflected in their faces."
+  },
+  {
+    id: 20,
+    image: "/images/76b2df99-1b04-4203-8ab0-b9f637aa3f2f.jpg",
+    title: "Couple Shirts",
+    story: "Every drive, every moment with you and our family feels like home."
+  },
+  {
+    id: 21,
+    image: "/images/8676ff84-5f8f-4e14-834f-f87ba7daeb43.jpg",
+    title: "Cooking Love",
+    story: "Even in the kitchen, everything feels right when you're by my side."
+    
+  },
+  {
+    id: 22,
+    image: "/images/8eda25fe-a66f-48ac-a7af-548e731a09e8.jpg",
+    title: "Weekend Escape",
+    story: "Sometimes it's just us against the world, and that's exactly how I like it."
+  },
+  {
+    id: 23,
+    image: "/images/98b07e6d-1c93-48ab-aedf-3247e7a27c82.jpg",
+    title: "Movie Nights",
+    story: "Even running errands with you turns into quality time I cherish."
+  },
+  {
+    id: 24,
+    image: "/images/aecdcc4e-cad1-4cb5-9417-288b69a3b402.jpg",
+    title: "Dining Together",
+    story: "Our little ones, your love, and the life we're building together—this is everything."
+  },
+  {
+    id: 25,
+    image: "/images/b4a88c9a-5f75-4bcf-82e5-3769a5e5f0a3.jpg",
+    title: "Backseat Snaps",
+    story: "Watching you with our children fills my heart with so much love and gratitude."
+  },
+  {
+    id: 26,
+    image: "/images/e184455b-46a7-4cfe-8f98-17ce94e38f78.jpg",
+    title: "Seffie Time",
+    story: "Standing on top of the world with you feels like destiny coming true."
+  },
+  {
+    id: 27,
+    image: "/images/e608c638-4625-41f6-80d8-e55654b43ff8.jpg",
+    title: "Sacred Moments",
+    story: "Together in faith and love, grateful for every blessing you bring to my life."
+  
+  },
+  {
+    id: 28,
+    image: "/images/e75c2dc9-372a-4fec-b5ee-f8f24f7291ce.jpg",
+    title: "Road Trips",
+    story: "Every outing is an adventure when I'm with you and our growing family."
+  },
+  {
+    id: 29,
+    image: "/images/fcd3b18b-c1f8-47cc-846e-d4ad9ec8c937.jpg",
+    title: "Achievements",
+    story: "Breathtaking landscapes pale in comparison to the beauty of us together."
+  },
+  {
+    id: 30,
+    image: "/images/fd2f8fc1-1683-491e-ae1c-21a1f12c0a40.jpg",
+    title: "Me and You",
+    story: "Breaking bread together, sharing laughs—these meals mean everything to me."
   }
 ];
 

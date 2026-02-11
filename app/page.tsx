@@ -17,16 +17,23 @@ function formatTime(ms: number) {
 export default function HomePage() {
   const router = useRouter();
   const target = useMemo(() => getValentineDate(), []);
+  const targetLabel = useMemo(
+    () =>
+      target.toLocaleDateString(undefined, {
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+      }),
+    [target]
+  );
   const [remaining, setRemaining] = useState<number | null>(null);
 
   useEffect(() => {
-    // Date gate: once local time reaches Feb 14, skip countdown and continue to passcode.
     if (isUnlockedByDate()) {
       router.replace("/passcode");
       return;
     }
 
-    // Initialize client-side time after mount to prevent SSR/client clock mismatch.
     setRemaining(target.getTime() - Date.now());
 
     const timer = window.setInterval(() => {
@@ -40,25 +47,29 @@ export default function HomePage() {
   const { days, hours, minutes, seconds } = formatTime(remaining ?? 0);
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-6">
+    <div className="flex min-h-screen items-center justify-center px-4 py-6 sm:p-6 md:p-8">
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="panel w-full max-w-xl text-center shadow-glow"
+        className="panel w-full max-w-2xl p-5 text-center shadow-glow sm:p-6 md:p-8"
       >
-        <p className="mb-4 text-sm uppercase tracking-[0.35em] text-blush/80">Valentine Countdown</p>
-        <h1 className="mb-3 text-3xl font-semibold text-pearl md:text-4xl">This surprise blooms on February 14 🌙✨</h1>
-        <p className="mb-8 text-sm text-pearl/75">Counting down in your local browser time.</p>
+        <p className="mb-3 text-xs uppercase tracking-[0.28em] text-blush/80 sm:mb-4 sm:text-sm sm:tracking-[0.35em]">
+          Valentine Countdown
+        </p>
+        <h1 className="mb-3 text-2xl font-semibold leading-tight text-pearl sm:text-3xl md:text-4xl">
+          This surprise blooms on {targetLabel}
+        </h1>
+        <p className="mb-6 text-sm text-pearl/75 sm:mb-8">Counting down in your local browser time.</p>
 
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
           {[
             { label: "Days", value: days },
             { label: "Hours", value: hours },
             { label: "Minutes", value: minutes },
             { label: "Seconds", value: seconds }
           ].map((item) => (
-            <div key={item.label} className="rounded-2xl border border-white/15 bg-black/20 p-3">
-              <div className="text-2xl font-bold text-blush">
+            <div key={item.label} className="rounded-2xl border border-white/15 bg-black/20 p-3 sm:p-4">
+              <div className="text-2xl font-bold text-blush sm:text-3xl">
                 {remaining === null ? "--" : String(item.value).padStart(2, "0")}
               </div>
               <div className="text-xs uppercase tracking-wider text-pearl/70">{item.label}</div>
