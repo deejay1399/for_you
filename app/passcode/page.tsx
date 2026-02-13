@@ -120,12 +120,16 @@ export default function PasscodePage() {
     <motion.div
       className="passcode-scene relative flex min-h-screen items-center justify-center overflow-hidden p-6"
       initial={{ opacity: 0 }}
-      animate={{ opacity: [0, 1, 1, 0] }}
-      transition={{
-        duration: clicked ? TIMING.routeToGallery : 10,
-        times: [0, 0.08, TIMING.pageFadeOutStart / TIMING.routeToGallery, 1],
-        ease: "easeInOut"
-      }}
+      animate={clicked ? { opacity: [0, 1, 1, 0] } : { opacity: 1 }}
+      transition={
+        clicked
+          ? {
+              duration: TIMING.routeToGallery,
+              times: [0, 0.08, TIMING.pageFadeOutStart / TIMING.routeToGallery, 1],
+              ease: "easeInOut"
+            }
+          : { duration: 0.35, ease: "easeOut" }
+      }
     >
       <div className="pointer-events-none absolute inset-0" />
 
