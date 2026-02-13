@@ -288,7 +288,14 @@ export default function MemoriesPage() {
               }}
             >
               <div className="relative h-[150px] w-full overflow-hidden rounded-sm bg-rose/15 md:h-[170px]">
-                <Image src={memory.image} alt={memory.title} fill className="object-cover" />
+                <Image
+                  src={memory.image}
+                  alt={memory.title}
+                  fill
+                  sizes="(max-width: 768px) 160px, 180px"
+                  quality={62}
+                  className="object-cover"
+                />
               </div>
               <p className="mt-2 text-center text-xs uppercase tracking-[0.2em] text-[#3d3046]">{memory.title}</p>
             </motion.button>
@@ -313,7 +320,14 @@ export default function MemoriesPage() {
               className="w-full max-w-xl rounded-3xl border border-white/20 bg-[#fff7fc] p-5 text-[#2d1c2e]"
             >
               <div className="relative mb-4 h-[260px] w-full overflow-hidden rounded-xl">
-                <Image src={selected.image} alt={selected.title} fill className="object-cover" />
+                <Image
+                  src={selected.image}
+                  alt={selected.title}
+                  fill
+                  sizes="(max-width: 768px) 92vw, 680px"
+                  quality={74}
+                  className="object-cover"
+                />
               </div>
               <h2 className="text-2xl font-semibold">{selected.title}</h2>
               <p className="mt-2 font-script text-3xl leading-tight text-[#5d3f62]">{selected.story}</p>

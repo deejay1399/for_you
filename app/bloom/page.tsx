@@ -19,6 +19,9 @@ const TIMING = {
   pageFadeOutStart: 8.9,
   routeToGallery: 10.2
 } as const;
+const ROUTE_TO_MEMORIES_DELAY_MS = 3000;
+const BURST_PETAL_COUNT = 180;
+const CARPET_PETAL_COUNT = 260;
 
 type BurstPetal = {
   id: number;
@@ -76,8 +79,8 @@ function buildCarpetPetals(count: number): CarpetPetal[] {
 export default function BloomPage() {
   const router = useRouter();
   const [clicked, setClicked] = useState(true);
-  const petals = useMemo(() => buildBurstPetals(340), []);
-  const carpetPetals = useMemo(() => buildCarpetPetals(680), []);
+  const petals = useMemo(() => buildBurstPetals(BURST_PETAL_COUNT), []);
+  const carpetPetals = useMemo(() => buildCarpetPetals(CARPET_PETAL_COUNT), []);
 
   useEffect(() => {
     if (!isUnlockedByDate()) {
@@ -89,7 +92,7 @@ export default function BloomPage() {
       return;
     }
 
-    const timer = window.setTimeout(() => router.push("/memories"), TIMING.routeToGallery * 1000);
+    const timer = window.setTimeout(() => router.push("/memories"), ROUTE_TO_MEMORIES_DELAY_MS);
     return () => window.clearTimeout(timer);
   }, [router]);
 
@@ -283,7 +286,7 @@ export default function BloomPage() {
             <motion.div
               key={petal.id}
               className="absolute h-16 w-12 transform-gpu"
-              style={{ left: "50%", top: "56%" }}
+              style={{ left: "50%", top: "56%", willChange: "transform, opacity" }}
               initial={{ opacity: 0, scale: 0.2, rotate: 0, x: 0, y: 0 }}
               animate={{
                 opacity: [0, 1, 1, 0.94],

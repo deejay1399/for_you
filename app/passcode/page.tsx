@@ -21,6 +21,10 @@ const TIMING = {
   pageFadeOutStart: 8.9,
   routeToGallery: 10.2
 } as const;
+const BURST_CLICK_DELAY = 0.08;
+const ROUTE_TO_MEMORIES_DELAY_MS = 2600;
+const BURST_PETAL_COUNT = 180;
+const CARPET_PETAL_COUNT = 260;
 
 type BurstPetal = {
   id: number;
@@ -82,8 +86,8 @@ export default function PasscodePage() {
   const [error, setError] = useState("");
   const [shake, setShake] = useState(false);
   const [clicked, setClicked] = useState(false);
-  const petals = useMemo(() => buildBurstPetals(340), []);
-  const carpetPetals = useMemo(() => buildCarpetPetals(680), []);
+  const petals = useMemo(() => buildBurstPetals(BURST_PETAL_COUNT), []);
+  const carpetPetals = useMemo(() => buildCarpetPetals(CARPET_PETAL_COUNT), []);
 
   useEffect(() => {
     if (!isUnlockedByDate()) {
@@ -94,7 +98,7 @@ export default function PasscodePage() {
 
   useEffect(() => {
     if (clicked) {
-      const timer = window.setTimeout(() => router.push("/memories"), TIMING.routeToGallery * 1000);
+      const timer = window.setTimeout(() => router.push("/memories"), ROUTE_TO_MEMORIES_DELAY_MS);
       return () => window.clearTimeout(timer);
     }
   }, [clicked, router]);
@@ -279,13 +283,13 @@ export default function PasscodePage() {
       </div>
 
       {/* Burst petals */}
-      <div className="pointer-events-none absolute inset-0 z-20">
+      <div className="pointer-events-none absolute inset-0 z-30">
         {clicked &&
           petals.map((petal) => (
             <motion.div
               key={petal.id}
               className="absolute h-16 w-12 transform-gpu"
-              style={{ left: "50%", top: "56%" }}
+              style={{ left: "50%", top: "56%", willChange: "transform, opacity" }}
               initial={{ opacity: 0, scale: 0.2, rotate: 0, x: 0, y: 0 }}
               animate={{
                 opacity: [0, 1, 1, 0.94],
@@ -295,7 +299,7 @@ export default function PasscodePage() {
                 y: petal.targetY
               }}
               transition={{
-                delay: TIMING.burstStart + petal.delay,
+                delay: BURST_CLICK_DELAY + petal.delay * 0.32,
                 duration: TIMING.petalsSpreadDuration + TIMING.petalsHold + 0.2,
                 times: [
                   0,
