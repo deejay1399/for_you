@@ -36,6 +36,14 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     if (!audio) {
       return;
     }
+    audio.load();
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) {
+      return;
+    }
 
     audio.volume = 0.25;
     if (isPlaying) {
@@ -81,8 +89,8 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   return (
     <AudioContext.Provider value={value}>
       <audio ref={audioRef} loop preload="auto">
-        <source src="/assets/music/valentine.mp4" type="audio/mp4" />
         <source src="/music/romantic.mp3" type="audio/mpeg" />
+        <source src="/assets/music/valentine.mp4" type="audio/mp4" />
       </audio>
       {children}
     </AudioContext.Provider>

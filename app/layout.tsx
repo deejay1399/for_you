@@ -14,6 +14,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="preload" href="/music/romantic.mp3" as="audio" type="audio/mpeg" />
+      </head>
       <body className={`${bodyFont.className} ${scriptFont.variable} bg-midnight`}>
         <AppShell>{children}</AppShell>
       </body>
