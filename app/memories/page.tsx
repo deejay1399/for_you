@@ -125,19 +125,19 @@ const baseMemories: Omit<Memory, "top" | "left" | "rotate">[] = [
     id: 18,
     image: "/images/5789bcac-9473-44e6-afed-93418a568298.jpg",
     title: "Getaway Vibes",
-    story: "Even in shadows, you light up my world. Your presence is all I need."
+    story: "Escaping reality with you is all the vacation I need. Adventure awaits wherever you are."
   },
   {
     id: 19,
     image: "/images/627505953_1914727702769390_1662733156553247178_n.jpg",
     title: "Island Hopping",
-    story: "Creating memories with our whole family, seeing our love reflected in their faces."
+    story: "From one island paradise to another, exploring the world with you and our family by our side."
   },
   {
     id: 20,
     image: "/images/76b2df99-1b04-4203-8ab0-b9f637aa3f2f.jpg",
     title: "Couple Shirts",
-    story: "Every drive, every moment with you and our family feels like home."
+    story: "Matching outfits, matching hearts—showing the world that we're a perfectly coordinated team."
   },
   {
     id: 21,
@@ -156,7 +156,7 @@ const baseMemories: Omit<Memory, "top" | "left" | "rotate">[] = [
     id: 23,
     image: "/images/98b07e6d-1c93-48ab-aedf-3247e7a27c82.jpg",
     title: "Movie Nights",
-    story: "Even running errands with you turns into quality time I cherish."
+    story: "Popcorn, dim lights, and your hand in mine. The perfect way to end any day."
   },
   {
     id: 24,
@@ -174,7 +174,7 @@ const baseMemories: Omit<Memory, "top" | "left" | "rotate">[] = [
     id: 26,
     image: "/images/e184455b-46a7-4cfe-8f98-17ce94e38f78.jpg",
     title: "Seffie Time",
-    story: "Standing on top of the world with you feels like destiny coming true."
+    story: "With you by my side, every selfie captures pure joy. You're my favorite view."
   },
   {
     id: 27,
@@ -193,13 +193,13 @@ const baseMemories: Omit<Memory, "top" | "left" | "rotate">[] = [
     id: 29,
     image: "/images/fcd3b18b-c1f8-47cc-846e-d4ad9ec8c937.jpg",
     title: "Achievements",
-    story: "Breathtaking landscapes pale in comparison to the beauty of us together."
+    story: "Every milestone with you fuels my drive to be better. You make me want to achieve the world."
   },
   {
     id: 30,
     image: "/images/fd2f8fc1-1683-491e-ae1c-21a1f12c0a40.jpg",
     title: "Me and You",
-    story: "Breaking bread together, sharing laughs—these meals mean everything to me."
+    story: "In the simplest moments with just us two, I find everything I've ever wanted."
   }
 ];
 
